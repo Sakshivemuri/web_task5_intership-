@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>My Blog</h1>
+
+  <div id="postsContainer" class="container"></div>
+
+  <script src="posts.js"></script>
+  <script>
+    const postsContainer = document.getElementById('postsContainer');
+    posts.forEach(post => {
+      const postCard = `
+        <div class="blog-card">
+          <img src="${post.image}" alt="${post.title}">
+          <h2>${post.title}</h2>
+          <p>${post.excerpt}</p>
+          <a href="post.html?id=${post.id}">Read More</a>
+        </div>
+      `;
+      postsContainer.innerHTML += postCard;
+    });
+  </script>
+
+</body>
+</html>
